@@ -1,9 +1,26 @@
+{{/* 
+Template: layout.gohtml
+Deskripsi: Template utama yang menggunakan komponen header dan footer
+Data yang dibutuhkan:
+- Name: Nama pengguna yang akan ditampilkan
+*/}}
+
+{{/* Mendefinisikan template utama dengan nama "layout" */}}
 {{define "layout"}}
-{{template "header" .}}
-<h1>Hello {{.Name}}</h1>
-{{template "footer"}}
+    {{/* Memanggil template header dan meneruskan data konteks (.) */}}
+    {{template "header" .}}
+    
+    {{/* Menampilkan salam dengan nama pengguna */}}
+    <h1>Hello {{.Name}}</h1>
+    
+    {{/* Memanggil template footer */}}
+    {{template "footer"}}
 {{end}}
 
+{{/* 
+Mendefinisikan template tambahan dengan nama "test"
+Template ini bisa digunakan untuk testing atau keperluan lain
+*/}}
 {{define "test"}}
     <h1>Test</h1>
 {{end}}
