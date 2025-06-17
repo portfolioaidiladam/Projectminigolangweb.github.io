@@ -1,0 +1,29 @@
+{{/* 
+Template: if.gohtml
+Deskripsi: Template untuk menampilkan salam dengan kondisi
+Data yang dibutuhkan:
+- Title: Judul halaman
+- Name: Nama pengguna (opsional)
+*/}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {{/* Menampilkan judul halaman dari data Title */}}
+    <title>{{.Title}}</title>
+</head>
+<body>
+{{/* 
+Action if digunakan untuk mengecek keberadaan data Name
+Jika Name ada dan tidak kosong, akan menampilkan salam dengan nama
+Jika Name kosong, akan menampilkan salam default
+*/}}
+{{if .Name}}
+    {{/* Menampilkan salam dengan nama jika Name ada */}}
+    <h1>Hello {{.Name}}</h1>
+{{else}}
+    {{/* Menampilkan salam default jika Name kosong */}}
+    <h1>Hello</h1>
+{{end}}
+</body>
+</html>

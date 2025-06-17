@@ -1,0 +1,32 @@
+{{/* Template untuk menampilkan hasil penilaian berdasarkan nilai akhir */}}
+{{/* Menggunakan operator perbandingan ge (greater than or equal) untuk membandingkan nilai */}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{/* Meta tag untuk karakter encoding */}}
+    <meta charset="UTF-8">
+    {{/* Judul halaman yang diambil dari data Title */}}
+    <title>{{.Title}}</title>
+</head>
+<body>
+    {{/* 
+        Kondisi pertama: Jika nilai akhir >= 80
+        Menampilkan pesan "Good" untuk nilai yang sangat baik
+    */}}
+    {{if ge .FinalValue 80}}
+        <h1>Good</h1>
+    {{/* 
+        Kondisi kedua: Jika nilai akhir >= 60
+        Menampilkan pesan "Nice Try" untuk nilai yang cukup
+    */}}
+    {{else if ge .FinalValue 60}}
+        <h1>Nice Try</h1>
+    {{/* 
+        Kondisi terakhir: Jika nilai akhir < 60
+        Menampilkan pesan "Try Again" untuk nilai yang kurang
+    */}}
+    {{else}}
+        <h1>Try Again</h1>
+    {{end}}
+</body>
+</html>

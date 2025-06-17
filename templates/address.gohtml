@@ -1,0 +1,37 @@
+{{/* 
+Template: address.gohtml
+Deskripsi: Template untuk menampilkan informasi alamat pengguna
+Data yang dibutuhkan:
+- Title: Judul halaman
+- Name: Nama pengguna
+- Address: Map berisi informasi alamat (Street dan City)
+*/}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{/* Meta tag untuk karakter encoding */}}
+    <meta charset="UTF-8">
+    {{/* Menampilkan judul halaman dari data Title */}}
+    <title>{{.Title}}</title>
+</head>
+<body>
+{{/* Komentar dalam template tidak akan ditampilkan di output */}}
+{{/* Menampilkan nama pengguna dari data Name */}}
+<h1>Name : {{.Name}}</h1>
+
+{{/* 
+Action with digunakan untuk mengakses nested data Address
+Jika Address ada, akan menampilkan informasi alamat
+Jika Address kosong, akan menampilkan pesan default
+*/}}
+{{with .Address}}
+    {{/* Menampilkan nama jalan dari data Address.Street */}}
+    <h1>Address Street : {{.Street}}</h1>
+    {{/* Menampilkan nama kota dari data Address.City */}}
+    <h1>Address City : {{.City}}</h1>
+{{else}}
+    {{/* Pesan yang ditampilkan jika Address kosong */}}
+    <h1>Anda Tidak Punya Alamat</h1>
+{{end}}
+</body>
+</html>

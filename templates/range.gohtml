@@ -1,0 +1,30 @@
+{{/* 
+Template: range.gohtml
+Deskripsi: Template untuk menampilkan daftar hobi pengguna
+Data yang dibutuhkan:
+- Title: Judul halaman
+- Hobbies: Slice string berisi daftar hobi
+*/}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {{/* Menampilkan judul halaman dari data Title */}}
+    <title>{{.Title}}</title>
+</head>
+<body>
+{{/* 
+Action range digunakan untuk melakukan iterasi pada slice Hobbies
+$index: indeks elemen dalam slice (0-based)
+$element: nilai elemen dalam slice
+Jika Hobbies kosong, akan menampilkan pesan default
+*/}}
+{{range $index, $element := .Hobbies}}
+    {{/* Menampilkan indeks dan nilai hobi */}}
+    <h1>{{$index}} - {{$element}}</h1>
+{{else}}
+    {{/* Pesan yang ditampilkan jika Hobbies kosong */}}
+    <h1>Anda tidak punya hoby</h1>
+{{end}}
+</body>
+</html>
