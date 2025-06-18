@@ -1,15 +1,27 @@
+{{/* Template upload.form.gohtml digunakan untuk menampilkan form upload file */}}
+{{/* 
+    Form ini mengirimkan data ke endpoint /upload dengan method POST
+    dan menggunakan enctype multipart/form-data untuk mendukung upload file
+*/}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Upload File</title>
 </head>
 <body>
-<h1>Upload File</h1>
-<form action="/upload" method="post" enctype="multipart/form-data">
-    <label>Name :<input type="text" name="name"></label><br>
-    <label>File :<input type="file" name="file"></label><br>
-    <input type="submit" value="Upload">
-</form>
+    <h1>Upload File</h1>
+    {{/* Form untuk upload file dengan method POST dan enctype multipart/form-data */}}
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        {{/* Input field untuk nama pengguna */}}
+        <label>Name :<input type="text" name="name"></label><br>
+        
+        {{/* Input field untuk memilih file yang akan diupload */}}
+        <label>File :<input type="file" name="file"></label><br>
+        
+        {{/* Tombol submit untuk mengirim form */}}
+        <input type="submit" value="Upload">
+    </form>
 </body>
 </html>

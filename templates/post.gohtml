@@ -1,11 +1,22 @@
+{{/* Template post.gohtml digunakan untuk menampilkan konten post dengan fitur auto-escape */}}
+{{/* 
+    Data yang dibutuhkan:
+    - Title: string - Judul dari post
+    - Body: string/template.HTML - Konten dari post (dapat berupa string biasa atau HTML yang sudah di-escape)
+*/}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{.Title}}</title>
 </head>
 <body>
-<h1>{{.Title}}</h1>
-{{.Body}}
+    {{/* Menampilkan judul post dalam format h1 */}}
+    <h1>{{.Title}}</h1>
+    
+    {{/* Menampilkan konten post. Jika Body adalah string biasa, akan di-escape otomatis */}}
+    {{/* Jika Body adalah template.HTML, konten akan ditampilkan tanpa escape */}}
+    {{.Body}}
 </body>
 </html>
